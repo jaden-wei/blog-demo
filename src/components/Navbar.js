@@ -1,8 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { auth } from "./Firebase";
-
+import { auth } from "../Firebase";
 import { signOut } from "firebase/auth";
 
 function Navbar({ isAuth, setIsAuth }) {
@@ -19,10 +18,16 @@ function Navbar({ isAuth, setIsAuth }) {
   return (
     <div>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/create">Create Post</Link>
+        <Link className="link" to="/">
+          Home
+        </Link>
+        <Link className="link" to="/create">
+          Create Post
+        </Link>
         {!isAuth ? (
-          <Link to="/login">Login</Link>
+          <Link className="link" to="/login">
+            Login
+          </Link>
         ) : (
           <button onClick={handleSignOut}>Sign Out</button>
         )}

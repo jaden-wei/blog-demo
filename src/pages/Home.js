@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../Firebase";
+import Post from "../components/Post";
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -19,12 +20,7 @@ function Home() {
   return (
     <div>
       {posts.map((post) => {
-        return (
-          <div key={post.id}>
-            <h1>{post.title}</h1>
-            <p>{post.text}</p>
-          </div>
-        );
+        return <Post post={post} />;
       })}
     </div>
   );

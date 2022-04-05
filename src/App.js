@@ -1,20 +1,11 @@
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-
-import { signOut } from "firebase/auth";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Create from "./pages/Create";
-import Navbar from "./Navbar";
-
-import { auth } from "./Firebase";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
